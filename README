@@ -1,1 +1,9 @@
 Solutions for exercises in K & R
+
+You can build any exercise by typing:
+
+    $ make build e=<exercise-number>
+
+Example:
+
+    $ make build e=1-12

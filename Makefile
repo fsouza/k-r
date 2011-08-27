@@ -1,10 +1,8 @@
-p=""
-
 clean:
 	@find . -name "*.out" -delete
 
 build: clean
-	cc -ansi -Wall $(p).c
+	cc -ansi -Wall $(e).c
 
 run: build
 	./a.out
