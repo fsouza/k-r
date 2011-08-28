@@ -1,5 +1,5 @@
 clean:
-	@find . -name "*.out" -delete
+	@git clean -dfx
 
 build: clean
 	cc -ansi -Wall $(e).c
