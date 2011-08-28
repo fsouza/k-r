@@ -5,4 +5,4 @@ build: clean
 	cc -ansi -Wall $(e).c
 
 run: build
-	./a.out
+	./a.out < $(e).in
