@@ -19,11 +19,12 @@ int main (int argc, char const* argv[]) {
 
     while ((c = getchar()) != EOF) {
         last_nonblank = 0;
-        for (i = 0; (c = getchar()) != EOF && c != '\n'; i++) {
+        for (i = 0; c != EOF && c != '\n'; i++) {
             line[i] = c;
             if (c != ' ' && c != '\t') {
                 last_nonblank = i;
             }
+            c = getchar();
         }
 
         if (last_nonblank > 0) {
