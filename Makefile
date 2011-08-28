@@ -1,5 +1,5 @@
 clean:
-	@git clean -dfx
+	@git clean -dfX
 
 build: clean
 	cc -ansi -Wall $(e).c
