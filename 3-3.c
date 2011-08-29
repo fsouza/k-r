@@ -40,9 +40,17 @@ void test_expand_A_Z() {
     assert_equal("ABCDEFGHIJKLMNOPQRSTUVWXYZ", s2);
 }
 
+void test_expand_0_9() {
+    char s1[MAXSTRINGLENGTH] = "0-9", s2[MAXSTRINGLENGTH];
+    expand(s1, s2);
+    assert(10 == strlen(s2));
+    assert_equal("0123456789", s2);
+}
+
 int main (int argc, char const* argv[]) {
     test_expand_a_z();
     test_expand_A_Z();
+    test_expand_0_9();
     return 0;
 }
 
