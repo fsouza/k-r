@@ -11,7 +11,7 @@
  * is taken literally.
  */
 
-# define MAXSTRINGLENGTH 1000
+# define MAXSTRINGLENGTH 50
 
 void expand(char s1[], char s2[]);
 
