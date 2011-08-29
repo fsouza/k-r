@@ -6,3 +6,6 @@ build: clean
 
 run: build
 	./a.out < $(e).in
+
+test: build
+	./a.out
