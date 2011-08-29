@@ -47,17 +47,29 @@ void test_expand_0_9() {
     assert_equal("0123456789", s2);
 }
 
+void test_expand_hifen_a_z() {
+    char s1[MAXSTRINGLENGTH] = "-a-z", s2[MAXSTRINGLENGTH];
+    expand(s1, s2);
+    assert(27 == strlen(s2));
+    assert_equal("-abcdefghijklmnopqrstuvwxyz", s2);
+}
+
 int main (int argc, char const* argv[]) {
     test_expand_a_z();
     test_expand_A_Z();
     test_expand_0_9();
+    test_expand_hifen_a_z();
     return 0;
 }
 
 void expand(char s1[], char s2[]) {
-    int i, c;
+    int i, c, init = (s1[0] == '-' ? 1 : 0);
 
-    for (i = 0, c = s1[0]; c <= s1[2]; i++, c++) {
+    if (init > 0) {
+        s2[0] = s1[0];
+    }
+
+    for (i = init, c = s1[init]; c <= s1[init + 2]; i++, c++) {
         s2[i] = c;
     }
 
